@@ -1,0 +1,19 @@
+.footer__backToTop {
+  display: block;
+  text-align: center;
+  color: #111;
+  padding: 15px 0;
+  line-height: 19px;
+  font-size: 13px;
+  cursor: pointer;
+  background-color: #232f3e;
+}
+
+.footer__backToTop:hover {
+  background-color: #485769;
+}
+
+.footer__backToTop span {
+  color: #fff;
+  font-weight: bold;
+}
