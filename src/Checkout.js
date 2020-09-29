@@ -1,20 +1,20 @@
 import React from "react";
 // import { useTransition, animated } from "react-spring";
-import FlipMove from "react-flip-move";
+// import FlipMove from "react-flip-move";
 import "./Checkout.css";
 import { useStateValue } from "./StateProvider";
 import CheckoutProduct from "./CheckoutProduct";
 import Subtotal from "./Subtotal";
-import { useTransition, animated } from "react-spring";
+// import { useTransition, animated } from "react-spring";
 
-function Checkout() {
+const Checkout = () => {
   const [{ basket, user }, dispatch] = useStateValue();
 
-  const transitions = useTransition(basket, (item) => item.id, {
-    from: { opacity: 0, transform: "translate3d(100%,0,0)" },
-    // enter: { opacity: 1, transform: "translate3d(0%,0,0)" },
-    leave: { opacity: 0, transform: "translate3d(-50%,0,0)" },
-  });
+  // const transitions = useTransition(basket, (item) => item.id, {
+  //   from: { opacity: 0 },
+  //   enter: { opacity: 1 },
+  //   leave: { opacity: 0 },
+  // });
 
   // const AnimatedProduct = animated(CheckoutProduct);
 
@@ -50,24 +50,18 @@ function Checkout() {
               />
             ))}
             {/* {transitions.map(
-              ({ item, key, props }, index) => console.log(key, item)
-              // <AnimatedProduct
-              //   key={key}
-              //   id={item.id}
-              //   title={item.title}
-              //   image={item.image}
-              //   price={item.price}
-              //   rating={item.rating}
-              //   style={props}
-              // />
-              //   <CheckoutProduct
-              //     key={key}
-              //     id={item.id}
-              //     title={item.title}
-              //     image={item.image}
-              //     price={item.price}
-              //     rating={item.rating}
-              //   />
+              ({ item, key, props }, index) =>
+                item && (
+                  <AnimatedProduct
+                    key={key}
+                    style={props}
+                    id={item.id}
+                    title={item.title}
+                    image={item.image}
+                    price={item.price}
+                    rating={item.rating}
+                  />
+                )
             )} */}
           </div>
         )}
@@ -80,6 +74,6 @@ function Checkout() {
       )}
     </div>
   );
-}
+};
 
 export default Checkout;
